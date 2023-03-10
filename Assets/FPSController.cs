@@ -45,7 +45,21 @@ public class FPSController : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
- 
+        Debug.Log(moveDirection);
+        if(curSpeedX > 0)
+        {
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            if (GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Stop();
+            }
+        }
         #endregion
  
         // #region Handles Jumping
@@ -88,12 +102,7 @@ public class FPSController : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "Wall" && hittingWall == false)
-        {
-            Debug.Log("Wall");
-            hittingWall = true;
-            StartCoroutine(TimerHittingWall());
-        }
+       
     }
 
 
