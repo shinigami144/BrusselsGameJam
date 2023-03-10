@@ -182,6 +182,30 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3019545228058864717, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019545228058864717, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019545228058864717, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
+      propertyPath: MaxDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019545228058864717, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 535da0dc335e8e241b26450f4639d487, type: 3}
+    - target: {fileID: 3019545228058864717, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019545228058864717, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfffe92a045c3c9409cf13b4e20e25c3, type: 3}
 --- !u!1 &360080469

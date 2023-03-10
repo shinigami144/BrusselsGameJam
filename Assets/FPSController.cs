@@ -23,7 +23,6 @@ public class FPSController : MonoBehaviour
 
     public bool hittingWall;
 
-
     CharacterController characterController;
     void Start()
     {
@@ -45,8 +44,11 @@ public class FPSController : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-        Debug.Log(moveDirection);
-        if(curSpeedX > 0)
+        Vector3 horizontalVelocity = characterController.velocity;
+        horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z);
+        // The overall speed
+        float overallSpeed = characterController.velocity.magnitude;
+        if (overallSpeed > 0)
         {
             if (!GetComponent<AudioSource>().isPlaying)
             {
@@ -89,15 +91,8 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
- 
+
         #endregion
-    }
-
-
-    IEnumerator TimerHittingWall()
-    {
-        yield return new WaitForSeconds(1);
-        hittingWall = false;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
