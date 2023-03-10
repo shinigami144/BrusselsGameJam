@@ -20,19 +20,21 @@ public class FPSController : MonoBehaviour
     float rotationX = 0;
  
     public bool canMove = true;
- 
-    
+
+    public bool hittingWall;
+
+
     CharacterController characterController;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        hittingWall = false;
     }
  
     void Update()
     {
- 
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -76,4 +78,24 @@ public class FPSController : MonoBehaviour
  
         #endregion
     }
+
+
+    IEnumerator TimerHittingWall()
+    {
+        yield return new WaitForSeconds(1);
+        hittingWall = false;
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Wall" && hittingWall == false)
+        {
+            Debug.Log("Wall");
+            hittingWall = true;
+            StartCoroutine(TimerHittingWall());
+        }
+    }
+
+
+
 }
