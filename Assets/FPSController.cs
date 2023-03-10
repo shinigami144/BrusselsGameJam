@@ -20,19 +20,20 @@ public class FPSController : MonoBehaviour
     float rotationX = 0;
  
     public bool canMove = true;
- 
-    
+
+    public bool hittingWall;
+
     CharacterController characterController;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        hittingWall = false;
     }
  
     void Update()
     {
- 
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -43,7 +44,24 @@ public class FPSController : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
- 
+        Vector3 horizontalVelocity = characterController.velocity;
+        horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z);
+        // The overall speed
+        float overallSpeed = characterController.velocity.magnitude;
+        if (overallSpeed > 0)
+        {
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            if (GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Stop();
+            }
+        }
         #endregion
  
         // #region Handles Jumping
@@ -73,7 +91,15 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
- 
+
         #endregion
     }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+       
+    }
+
+
+
 }

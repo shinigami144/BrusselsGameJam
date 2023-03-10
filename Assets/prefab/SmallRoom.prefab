@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4267604051007211988}
   m_Layer: 0
   m_Name: WR
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,8 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd391d5c8fcd9f4f98e97cc93a35429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePosition: 0
-  stopPosition: 0
   openSpeed: 0
 --- !u!1 &4267604051361609679
 GameObject:
@@ -258,7 +256,7 @@ GameObject:
   - component: {fileID: 4267604051361609677}
   m_Layer: 0
   m_Name: SL
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,7 +387,7 @@ GameObject:
   - component: {fileID: 4267604051456507927}
   m_Layer: 0
   m_Name: NL
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -486,7 +484,7 @@ GameObject:
   - component: {fileID: 4267604051575587421}
   m_Layer: 0
   m_Name: SR
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,8 +712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd391d5c8fcd9f4f98e97cc93a35429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePosition: 0
-  stopPosition: 0
   openSpeed: 0
 --- !u!1 &4267604051890326146
 GameObject:
@@ -799,7 +795,7 @@ GameObject:
   - component: {fileID: 4267604052032625894}
   m_Layer: 0
   m_Name: WL
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,8 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd391d5c8fcd9f4f98e97cc93a35429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePosition: 0
-  stopPosition: 0
   openSpeed: 0
 --- !u!1 &4267604052232445996
 GameObject:
@@ -1009,7 +1003,7 @@ GameObject:
   - component: {fileID: 4267604052232445994}
   m_Layer: 0
   m_Name: ER
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1106,7 +1100,7 @@ GameObject:
   - component: {fileID: 4267604052478374604}
   m_Layer: 0
   m_Name: EL
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1299,8 +1293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd391d5c8fcd9f4f98e97cc93a35429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basePosition: 0.5
-  stopPosition: -1
   openSpeed: 0.01
 --- !u!1 &4267604052783405317
 GameObject:
@@ -1316,7 +1308,7 @@ GameObject:
   - component: {fileID: 4267604052783405315}
   m_Layer: 0
   m_Name: NR
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
