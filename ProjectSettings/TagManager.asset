@@ -9,6 +9,7 @@ TagManager:
   - sand
   - water
   - normal
+  - snakeStop
   layers:
   - Default
   - TransparentFX
