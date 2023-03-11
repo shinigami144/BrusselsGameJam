@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Lutin
   layers:
   - Default
   - TransparentFX
