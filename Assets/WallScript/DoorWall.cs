@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DoorWall : MonoBehaviour
 {
-    [SerializeField]
     private float basePosition;
-    [SerializeField]
     private float stopPosition;
 
     [SerializeField]
@@ -15,7 +13,7 @@ public class DoorWall : MonoBehaviour
     void Start()
     {
         basePosition = transform.position.y;
-        stopPosition = transform.position.y - 1.5f;
+        stopPosition = transform.position.y - 2f;
     }
 
     // Update is called once per frame
@@ -32,15 +30,24 @@ public class DoorWall : MonoBehaviour
             yield return new WaitForSeconds(openSpeed/100);
         }
     }
+    IEnumerator CloseDoorAnimation()
+    {
+        while (transform.position.y < basePosition)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + openSpeed, transform.position.z);
+            yield return new WaitForSeconds(openSpeed / 100);
+        }
+    }
 
     public void OpenDoor()
     {
-        Debug.Log("LOL");
+        Debug.Log("LOL OPEN");
         StartCoroutine(OpenDoorAnimation());
     }
 
     public void CloseDoor()
     {
-
+        Debug.Log("LOL END");
+        StartCoroutine(CloseDoorAnimation());
     }
 }
