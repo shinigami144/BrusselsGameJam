@@ -8,6 +8,7 @@ public class LutinScript : MonoBehaviour
     private WayPointScript _nextWayPoint;
     [SerializeField]
     private bool originalLutin;
+    [SerializeField]
     private bool _waitPlayer;
     [SerializeField]
     private float speed;

@@ -6,7 +6,7 @@ public class NextTarget : MonoBehaviour
 {
     public GameObject[] soundCues;
 
-    public GameObject[] checkPoints;
+    private bool checkpointpass;
 
     public AudioClip sandWalk;
 
@@ -19,11 +19,11 @@ public class NextTarget : MonoBehaviour
     void Start(){
         walkSound = GetComponent<AudioSource>();
         walkSound.clip = normalWalk;
+        checkpointpass = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         
         if(other.tag == "sand"){
             walkSound.clip = sandWalk;
