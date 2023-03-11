@@ -20,6 +20,7 @@ public class FPSController : MonoBehaviour
     float rotationX = 0;
  
     public bool canMove = true;
+    public bool canRotate = true;
 
     public bool hittingWall;
 
@@ -84,7 +85,7 @@ public class FPSController : MonoBehaviour
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
  
-        if (canMove)
+        if (canRotate)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -94,12 +95,5 @@ public class FPSController : MonoBehaviour
 
         #endregion
     }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-       
-    }
-
-
 
 }
