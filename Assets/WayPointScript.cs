@@ -7,7 +7,7 @@ public class WayPointScript : MonoBehaviour
     [SerializeField]
     WayPointScript nextWayPoint;
     [SerializeField]
-    bool lockWayPoint;
+    public bool lockWayPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class WayPointScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Lutin")
+        if(other.gameObject.GetComponent<LutinScript>().IsOriginalLutin())
         {
             other.gameObject.GetComponent<LutinScript>().nextWayPoint = this.nextWayPoint;
             other.gameObject.GetComponent<LutinScript>().waitPlayer = this.lockWayPoint;

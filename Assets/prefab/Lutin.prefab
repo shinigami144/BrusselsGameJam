@@ -114,7 +114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextWayPoint: {fileID: 0}
+  originalLutin: 1
   speed: 5
+  audioList:
+  - {fileID: 8300000, guid: b54ff2716cc19bf4999ec404421a7c1f, type: 3}
+  - {fileID: 8300000, guid: 1b88db3fd7daa18499df7d2bab83995e, type: 3}
+  secondBetweenTwoLaught: 2
 --- !u!54 &6357075200638214251
 Rigidbody:
   m_ObjectHideFlags: 0
