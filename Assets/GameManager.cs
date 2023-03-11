@@ -45,17 +45,20 @@ public class GameManager : MonoBehaviour
 
     public void LoadCommandMenu()
     {
-        //ChangeScene();
+        ChangeScene(1);
     }
 
     public void LoadMainMenu()
     {
-        //ChangeScene();
+        ChangeScene(0);
     }
 
     public void LoadGame()
     {
-        // ChangeScene();
+        ChangeScene(2);
     }
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
