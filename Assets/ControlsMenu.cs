@@ -31,7 +31,7 @@ public class ControlsMenu : MonoBehaviour
         next.GetComponent<RectTransform>().sizeDelta = new Vector2(Bw, Bh);
         next.GetComponent<RectTransform>().position = new Vector3(w / 2,  Bh, 0);
 
-        Controls.GetComponent<RectTransform>().sizeDelta = new Vector2(w, h / 2);
+        Controls.GetComponent<RectTransform>().sizeDelta = new Vector2(w/2, h / 2);
         Controls.GetComponent<RectTransform>().position = new Vector3(w/2, h/2, 0);
     }
 
