@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Lutin
+  - sand
+  - water
+  - normal
   layers:
   - Default
   - TransparentFX
