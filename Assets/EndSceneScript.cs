@@ -12,6 +12,10 @@ public class EndSceneScript : MonoBehaviour
 
     [SerializeField]
     TMPro.TextMeshProUGUI text;
+    [SerializeField]
+    TMPro.TextMeshProUGUI credit;
+    [SerializeField]
+    List<string> creditText;
     void Start()
     {
         float h = Screen.height;
@@ -23,7 +27,10 @@ public class EndSceneScript : MonoBehaviour
         backgroundImage.color = new Color(0, 0, 0);
         text.GetComponent<RectTransform>().sizeDelta = new Vector2(wt, ht);
         text.GetComponent<RectTransform>().position = new Vector3(wt/2, h-ht);
+        credit.GetComponent<RectTransform>().sizeDelta = new Vector2(wt, ht);
+        credit.GetComponent<RectTransform>().position = new Vector3(wt / 2, h - 2*ht);
         text.gameObject.SetActive(false);
+        credit.gameObject.SetActive(false);
         StartCoroutine(Cinematique());
     }
 
@@ -36,11 +43,12 @@ public class EndSceneScript : MonoBehaviour
     IEnumerator Cinematique()
     {
         // joueur audio Porte;
-        yield return new WaitForSecondsRealtime(1);
         // attendre longeur audio
         // audio interupeteur
         backgroundImage.color = new Color(255, 255, 255);
+        yield return new WaitForSecondsRealtime(15);
         text.gameObject.SetActive(true);
+        credit.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(60);
         FindAnyObjectByType<GameManager>().LoadMainMenu();
     }
