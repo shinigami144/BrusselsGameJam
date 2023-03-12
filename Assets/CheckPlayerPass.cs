@@ -6,6 +6,8 @@ public class CheckPlayerPass : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool playerPass;
+    [SerializeField]
+    private bool lastChckPoint;
     void Start()
     {
         playerPass = false;
@@ -24,7 +26,12 @@ public class CheckPlayerPass : MonoBehaviour
             if (!this.playerPass)
             {
                 playerPass = true;
-                FindAnyObjectByType<LutinScript>().waitPlayer = false;
+                LutinScript l = FindAnyObjectByType<LutinScript>();
+                if (lastChckPoint)
+                {
+                    l.lutinCanbeCatch = true;
+                }
+                l.waitPlayer = false;
             }
         }
     }

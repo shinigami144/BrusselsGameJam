@@ -95,5 +95,5 @@ public class FPSController : MonoBehaviour
 
         #endregion
     }
-
+    
 }

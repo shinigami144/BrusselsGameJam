@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 1569164578481836983}
   - component: {fileID: 1569164578481836976}
   - component: {fileID: 3019545228058864717}
+  - component: {fileID: 5846958098741213509}
+  - component: {fileID: 2505072511347632280}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,6 +160,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
+  canRotate: 1
   hittingWall: 0
 --- !u!82 &3019545228058864717
 AudioSource:
@@ -255,6 +258,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5846958098741213509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569164578481836978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ccfbf63acb3374cb256d0f53e37836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundCues: []
+  sandWalk: {fileID: 8300000, guid: 8423550511f8ac141a2cf428bd707949, type: 3}
+  normalWalk: {fileID: 8300000, guid: 8679a6067a6d9d44a807bb5a2157c309, type: 3}
+  waterWalk: {fileID: 8300000, guid: aae942538a7b12d459ee0c6ec43dc34f, type: 3}
+--- !u!114 &2505072511347632280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569164578481836978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5f9bc85903cec4794e1d0359c75abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSource: {fileID: 0}
 --- !u!1 &1569164578920090417
 GameObject:
   m_ObjectHideFlags: 0
