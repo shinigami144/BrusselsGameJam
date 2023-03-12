@@ -274,8 +274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorToOpen: {fileID: 0}
-  prefabWayPoint: {fileID: 4103171617429830985, guid: e0455a521bc71b740bdb882b3653b23a, type: 3}
-  prefabLutin: {fileID: 6357075200638214253, guid: 8096b1da08adbfb4aa3fcb64de389b6b, type: 3}
+  prefabWayPoint: {fileID: 4103171617429830985, guid: 4d2a9c14d0d598145a8474fd8a76ea7a, type: 3}
+  prefabLutin: {fileID: 6357075200638214253, guid: 8d8075db20e69274ab16cc0403b6e51f, type: 3}
+  timeBeforeEndScene: 5
   player: {fileID: 225210902}
   numberOfLutin: 6
 --- !u!114 &1082472994 stripped
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextWayPoint: {fileID: 1082472994}
   lockWayPoint: 0
+  CinematicWayPoint: 0
 --- !u!65 &1091452765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -533,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextWayPoint: {fileID: 2092923131}
   lockWayPoint: 1
+  CinematicWayPoint: 0
 --- !u!65 &1226389699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -837,6 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextWayPoint: {fileID: 1091452764}
   lockWayPoint: 0
+  CinematicWayPoint: 0
 --- !u!65 &2092923132
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class CheckPlayerPass : MonoBehaviour
                 LutinScript l = FindAnyObjectByType<LutinScript>();
                 if (lastChckPoint)
                 {
-                    l.lutinCanbeCatch = true;
+                    other.gameObject.AddComponent<CatchLutin>();
                 }
                 l.waitPlayer = false;
             }

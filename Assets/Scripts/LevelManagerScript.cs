@@ -12,24 +12,18 @@ public class LevelManagerScript : MonoBehaviour
 
     [SerializeField]
     GameObject prefabLutin;
-
+    [SerializeField]
+    float timeBeforeEndScene;
 
     [SerializeField]
     GameObject player;
     [SerializeField]
     int numberOfLutin;
+    bool timerStart;
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(TestCode());
-    }
-
-
-    IEnumerator TestCode()
-    {
-        doorToOpen.OpenDoor();
-        yield return new WaitForSeconds(5);
-        doorToOpen.CloseDoor();
+        timerStart = false;
     }
 
     // Update is called once per frame
@@ -51,10 +45,25 @@ public class LevelManagerScript : MonoBehaviour
             var instanceLutin = Instantiate<GameObject>(prefabLutin);
             instanceLutin.transform.position = player.transform.position + new Vector3(Mathf.Sin(i*angle) * 30, 0, Mathf.Cos(i*angle) *30);
             instanceLutin.GetComponent<LutinScript>().nextWayPoint = instanceWayPoint.GetComponent<WayPointScript>();
-
+            instanceLutin.GetComponent<LutinScript>().setOrignialLutin(false);
 
         }
         // CReate X WayPoint
+    }
+    IEnumerator timerBeforeChangeEndScene()
+    {
+        yield return new WaitForSecondsRealtime(timeBeforeEndScene);
+        // FindAnyObjectByType<GameManager>().LoadEndScene();
+        Debug.Log("END");
+    }
+    public void TimerStart()
+    {
+        Debug.Log("StartTimer");
+        if (timerStart == false)
+        {
+            timerStart = true;
+            StartCoroutine(timerBeforeChangeEndScene());
+        }
     }
 
 }

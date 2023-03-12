@@ -13,7 +13,6 @@ public class LutinScript : MonoBehaviour
     [SerializeField]
     private float speed;
     AudioSource myAudioSource;
-    public   bool lutinCanbeCatch;
     public bool waitPlayer{
         get {
             return _waitPlayer;
@@ -37,6 +36,11 @@ public class LutinScript : MonoBehaviour
         }
     }
 
+    public void setOrignialLutin(bool isOriginal)
+    {
+        originalLutin = isOriginal;
+    }
+
     [SerializeField]
     private List<AudioClip> audioList;
 
@@ -48,7 +52,6 @@ public class LutinScript : MonoBehaviour
         waitPlayer = false;
         StartCoroutine(laughtOflutin());
         myAudioSource = GetComponent<AudioSource>();
-        lutinCanbeCatch = false;
     }
 
     // Update is called once per frame
@@ -76,5 +79,4 @@ public class LutinScript : MonoBehaviour
 
         }
     }
-
 }

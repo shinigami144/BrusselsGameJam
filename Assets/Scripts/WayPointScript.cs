@@ -9,6 +9,7 @@ public class WayPointScript : MonoBehaviour
     [SerializeField]
     public bool lockWayPoint;
     // Start is called before the first frame update
+    public bool CinematicWayPoint;
     void Start()
     {
         
@@ -22,10 +23,17 @@ public class WayPointScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<LutinScript>().IsOriginalLutin())
+        if(other.gameObject.tag == "Lutin")
         {
-            other.gameObject.GetComponent<LutinScript>().nextWayPoint = this.nextWayPoint;
-            other.gameObject.GetComponent<LutinScript>().waitPlayer = this.lockWayPoint;
+            if (other.gameObject.GetComponent<LutinScript>().IsOriginalLutin())
+            {
+                other.gameObject.GetComponent<LutinScript>().nextWayPoint = this.nextWayPoint;
+                other.gameObject.GetComponent<LutinScript>().waitPlayer = this.lockWayPoint;
+            }
+        }
+        if(other.gameObject.tag == "DarkLutin")
+        {
+            FindAnyObjectByType<LevelManagerScript>().TimerStart();
         }
     }
 
