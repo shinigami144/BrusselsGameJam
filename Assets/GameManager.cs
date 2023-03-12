@@ -61,7 +61,11 @@ public class GameManager : MonoBehaviour
     {
         ChangeScene(2);
     }
-
+    
+    public void LoadEndScene()
+    {
+        ChangeScene(3);
+    }
     public void Quit()
     {
         Application.Quit();
