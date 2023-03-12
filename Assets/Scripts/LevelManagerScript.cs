@@ -53,8 +53,7 @@ public class LevelManagerScript : MonoBehaviour
     IEnumerator timerBeforeChangeEndScene()
     {
         yield return new WaitForSecondsRealtime(timeBeforeEndScene);
-        // FindAnyObjectByType<GameManager>().LoadEndScene();
-        Debug.Log("END");
+        FindAnyObjectByType<GameManager>().LoadEndScene();
     }
     public void TimerStart()
     {
