@@ -16,6 +16,7 @@ public class EndSceneScript : MonoBehaviour
         backgroundImage.GetComponent<RectTransform>().sizeDelta = new Vector2(w, h);
         backgroundImage.GetComponent<RectTransform>().position = new Vector3(w / 2, h / 2);
         backgroundImage.color = new Color(0, 0, 0);
+        StartCoroutine(Cinematique());
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class EndSceneScript : MonoBehaviour
     IEnumerator Cinematique()
     {
         // joueur audio Porte;
+        yield return new WaitForSecondsRealtime(1);
         // attendre longeur audio
         // audio interupeteur
         backgroundImage.color = new Color(255, 255, 255);

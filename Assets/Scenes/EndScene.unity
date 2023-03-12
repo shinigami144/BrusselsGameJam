@@ -359,7 +359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4401c770a9933874a9b100f80b2ac7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinematiqueImage: []
+  cinematiqueImage:
+  - {fileID: 21300000, guid: 403d2d30f8b633848bfd0a571a00e184, type: 3}
+  backgroundImage: {fileID: 630401311}
 --- !u!114 &630401311
 MonoBehaviour:
   m_ObjectHideFlags: 0
